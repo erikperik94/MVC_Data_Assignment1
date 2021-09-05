@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    <div>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-success border-bottom" id="navmenubox">
+                <a class="navbar-brand text-info" id="menulogo" asp-controller="People" asp-action="Index">
+                    <img alt="logo" src="@Url.Content("~/pictures/MVClogo.jpg")">
+                </a>
+            </nav>
+        </header>
+
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+
+
+    <footer>
+        <span>&#64;Erik Aggfelt&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </footer>
+</body>
+</html>

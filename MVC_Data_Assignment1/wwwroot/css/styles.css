@@ -1,0 +1,30 @@
+﻿
+
+body {
+    position: relative;
+    width: 1024px;
+    height: 1400px;
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.flexwrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+    .flexwrap > div {
+        text-align: center;
+        width: 250px;
+        height: 450px;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .flexwrap #warningtext {
+        color: #EA4747;
+    }
