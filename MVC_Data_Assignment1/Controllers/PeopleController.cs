@@ -15,18 +15,15 @@ namespace MVC_Data_Assignment1.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.Title = "Eriks Project";
-
-            PeopleService checkListView = new PeopleService();
+            ViewBag.Title = "Eriks MVC project";
+            PeopleService listView = new PeopleService();
             PeopleViewModel peopleList = new PeopleViewModel();
-
-            InMemoryPeopleRepo makeBaseList = new InMemoryPeopleRepo();
-
-            peopleList.PeopleListView = checkListView.All().PeopleListView;
+            InMemoryPeopleRepo fakeList = new InMemoryPeopleRepo();
+            peopleList.PeopleListView = listView.All().PeopleListView;
             
             if(peopleList.PeopleListView == null || peopleList.PeopleListView.Count == 0)
             {
-                makeBaseList.CreateBasePersons();
+                fakeList.CreateBasePersons();
             }
             
             return View(peopleList);
@@ -53,19 +50,15 @@ namespace MVC_Data_Assignment1.Controllers
                 newModel.PersonName = personViewModel.PersonName;
                 newModel.PersonPhoneNumber = personViewModel.PersonPhoneNumber;
                 newModel.PersonCity = personViewModel.PersonCity;
-
                 newModel.PeopleListView = repoList.All().PeopleListView;
-
                 repoList.Add(personViewModel);
-
-                ViewBag.Mess = "Person Added!";
+                ViewBag.Mess = "Person appended!";
                 return View("Index", newModel);
             }
 
             newModel.PersonName = personViewModel.PersonName;
             newModel.PersonPhoneNumber = personViewModel.PersonPhoneNumber;
             newModel.PersonCity = personViewModel.PersonCity;
-
             newModel.PeopleListView = repoList.All().PeopleListView;
             return View("index", newModel);
         }
@@ -74,7 +67,6 @@ namespace MVC_Data_Assignment1.Controllers
         {
             PeopleService deleteById = new PeopleService();
             deleteById.Remove(id);
-
             return RedirectToAction("Index");
         }
     }

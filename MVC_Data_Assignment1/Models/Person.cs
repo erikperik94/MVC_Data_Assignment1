@@ -31,7 +31,7 @@ namespace MVC_Data_Assignment1.Models
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("The in-value are Null/Empty or whitespace. Will not be stored");
+                    throw new ArgumentException("Input is Null/Empty or whitespace.");
                 }
                 _personName = value;
             }
@@ -43,7 +43,7 @@ namespace MVC_Data_Assignment1.Models
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("The in-value are Null/Empty or whitespace. Will not be stored");
+                    throw new ArgumentException("Input is Null/Empty or whitespace.");
                 }
                 _personPhoneNumber = value;
             }
@@ -55,7 +55,7 @@ namespace MVC_Data_Assignment1.Models
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("The in-value are Null/Empty or whitespace. Will not be stored");
+                    throw new ArgumentException("Input is Null/Empty or whitespace.");
                 }
                 _personCity = value;
             }
